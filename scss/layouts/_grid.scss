@@ -1,0 +1,121 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+// sdfsa
+
+// about
+section.about {
+    display: none;
+    display: grid;
+    grid-template-areas: 
+        'g-transform'
+        'stand-out'
+        'g-graphic-design'
+        'g-photography';
+
+    @include bp.breakpointMin(medium-screen) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            'g-transform g-transform'
+            'stand-out stand-out'
+            'g-graphic-design g-photography';
+    }
+}
+
+.transform {
+    grid-area: g-transform;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        'img'
+        'description';
+
+    .img {
+        grid-area: img;
+    }
+
+    .description {
+        grid-area: description;
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            'description img';
+
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.stand-out {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: stand-out;
+
+    @include bp.breakpointMin(medium-screen) {
+        grid-template-columns: repeat(2, 1fr);
+        
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.grid-graphic-design {
+    grid-area: g-graphic-design;
+}
+
+.grid-photography {
+    grid-area: g-photography;
+}
+
+
+// testimonials
+section.testimonials {
+    .client-testimonial{
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(48);
+
+        @include bp.breakpointMin(medium-screen) {
+            flex-direction: row;
+        }
+    }
+}
+
+
+
+
+
+
+// image-gallery
+section.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        'milk oraange'
+        'cone sugar';
+
+    @include bp.breakpointMin(medium-screen) {
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+            'milk oraange cone sugar';
+    }
+}
+
+.milk-bottles {
+    grid-area: milk;
+}
+
+.orange {
+    grid-area: oraange;
+}
+
+.cone {
+    grid-area: cone;
+}
+
+.sugar-cube {
+    grid-area: sugar;
+}

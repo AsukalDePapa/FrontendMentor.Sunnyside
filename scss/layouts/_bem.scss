@@ -1,0 +1,28 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+@use '../utils/fonts' as font;
+
+section {
+    width: min(100%, f.rem(1440));
+}
+
+
+.ff-barlow {
+    font-family: font.$ff-barlow;
+}
+
+.ff-fraunces {
+    font-family: font.$ff-fraunces;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-black {
+    font-weight: 900;
+}

@@ -1,0 +1,117 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+@use '../utils/fonts' as font;
+
+header {
+    // background-color: pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding-block: f.rem(32);
+    position: relative;
+    font-family: font.$ff-barlow;
+    // height: 100vh;
+
+    @include bp.breakpointMin(medium-screen) {
+        .hamburger {
+            display: none;
+        }
+    }
+}
+
+nav {
+    position: absolute;
+    background: var(--white);
+    padding: f.rem(32);
+    width: 100%;
+    height: fit-content;
+    top: 115%;
+    transform: translateY(-200%);
+
+    ul {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: f.rem(24);
+
+        li {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            width: 20%;
+        }
+
+        a {
+            display: flex;
+            border-radius: 50px;
+            align-content: center;
+            justify-content: center;
+            color: var(--x-d-grayish-blue);
+            padding-block: f.rem(12);
+            width: 100%;
+
+            &:active {
+                background-color: var(--yellow);
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-bottom: 50px solid var(--white);
+        border-left: 50px solid transparent;
+        top: -20px;
+        right: 0;
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        position: unset;
+        transform: translateY(0);
+        background: none;
+        width: unset;
+        height: unset;
+        padding: unset;
+        transition: all .5s ease-in;
+
+        ul {
+            flex-direction: row;
+            gap: f.rem(32);
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                    padding-inline: f.rem(16);
+                    color: var(--white);
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.250);
+                    }
+                }
+            }
+
+            .active {
+                background-color: var(--white);
+                color: var(--x-d-dstrtd-blue);
+
+                &:hover {
+                    background-color: var(--white);
+                    color: var(--x-d-dstrtd-blue);
+                }
+            }
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.show {
+    transform: translateY(0);
+    transition: all .3s ease-in;
+}

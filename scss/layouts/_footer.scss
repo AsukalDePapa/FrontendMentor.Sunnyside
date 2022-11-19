@@ -1,0 +1,96 @@
+@use '../utils/functions' as f;
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    padding: f.rem(32);
+    background: var( --d-mdrt-cyan);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: f.rem(32);
+    svg {
+        path {
+            fill: var(--d-blue);
+        }
+    }
+}
+
+ul {
+    transform: translateX(.5%);
+}
+
+footer > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: f.rem(32);
+    margin-bottom: f.rem(64);
+
+    a {
+        color: var(--d-blue);
+
+        &:hover {
+            color: var(--white);
+        }
+    }
+}
+
+.socials {
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: f.rem(16);
+        margin-bottom: f.rem(32);
+
+        li {
+            a {
+                svg {
+                    path {
+                        fill: var(--d-blue);
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: var(--white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.attribution { 
+    font-size: f.rem(14); 
+    text-align: center; 
+    color: var(--x-d-dstrtd-blue);
+}
+
+.attribution a { 
+    font-size: f.rem(15);
+    color: var(--white); 
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin-inline: auto;
+        width: 0;
+        height: 2px;
+        background-color: var(--white);
+        transition: width .3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
