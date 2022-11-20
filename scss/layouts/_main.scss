@@ -1,17 +1,6 @@
 @use '../utils/breakpoints' as bp;
 @use '../utils/functions' as f;
 
-body {
-    // background-image: url(../images/mobile/image-header.jpg);
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-position: top;
-
-    // @include bp.breakpointMin(xlarge-screen) {
-    //     background-image: url(../images/desktop/image-header.jpg);
-    // }
-}
-
 main {
     // sdfdf
     // display: none;
@@ -23,7 +12,7 @@ main {
     h1,
     svg {
         position: absolute;
-        z-index: 10;
+        z-index: 1;
     }
 
     h1 {

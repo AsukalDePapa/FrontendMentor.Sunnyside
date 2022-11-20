@@ -104,6 +104,7 @@ nav {
   height: -moz-fit-content;
   height: fit-content;
   top: 115%;
+  z-index: 10;
   transform: translateY(-200%);
 }
 nav ul {
@@ -191,7 +192,7 @@ main {
 main h1,
 main svg {
   position: absolute;
-  z-index: 10;
+  z-index: 1;
 }
 main h1 {
   top: 20%;
