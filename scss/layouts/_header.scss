@@ -9,8 +9,12 @@ header {
     align-items: center;
     width: 90%;
     padding-block: f.rem(32);
-    position: relative;
     font-family: font.$ff-barlow;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    z-index: 10;
     // height: 100vh;
 
     @include bp.breakpointMin(medium-screen) {

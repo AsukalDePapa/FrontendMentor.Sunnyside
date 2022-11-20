@@ -2,14 +2,14 @@
 @use '../utils/functions' as f;
 
 body {
-    background-image: url(../images/mobile/image-header.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
+    // background-image: url(../images/mobile/image-header.jpg);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: top;
 
-    @include bp.breakpointMin(xlarge-screen) {
-        background-image: url(../images/desktop/image-header.jpg);
-    }
+    // @include bp.breakpointMin(xlarge-screen) {
+    //     background-image: url(../images/desktop/image-header.jpg);
+    // }
 }
 
 main {
@@ -17,13 +17,19 @@ main {
     // display: none;
     text-align: center;
     // margin-bottom: f.rem(570);
-    margin-bottom: 100%;
+    // margin-bottom: 100%;
+    position: relative;
 
-    @include bp.breakpointMin(medium-screen) {
-        margin-bottom: 34.8%;
+    h1,
+    svg {
+        position: absolute;
+        z-index: 10;
     }
 
     h1 {
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
         text-transform: uppercase;
         font-size: f.rem(36);
         letter-spacing: 5px;
@@ -32,6 +38,9 @@ main {
     }
 
     svg {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
         margin-inline: auto;
         width: 36px; 
         height: 114px;
